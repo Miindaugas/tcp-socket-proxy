@@ -35,4 +35,6 @@ net.createServer((local) => {
     redirect(local, remote);
     redirect(remote, local);
     remote.connect(remoteport, remotehost);
-}).listen(3000);
+}).listen(process.env.PORT || 80);
+
+console.log(process.env.PORT || 80);
