@@ -17,5 +17,8 @@
   },
   "homepage": "https://github.com/Miindaugas/tcp-socket-proxy#readme",
   "dependencies": {
+  },
+  "engines": {
+    "node": "12.6.0"
   }
 }
