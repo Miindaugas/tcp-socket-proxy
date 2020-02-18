@@ -7,13 +7,15 @@ const remotehost = process.env.PROXY_REMOTE_HOST;
 console.log(`Proxy: ${whitelist}:${localport} -> ${remotehost}:${remoteport}`);
 
 net.createServer((local) => {
-    console.log('Connected!');
+    console.log('Connected!', local.remoteAddress);
 
         // White list only your connection
     if (local.remoteAddress !== whitelist) {
         local.end();
         return;
     }
+
+    console.log('Creating tunnel');
 
     const redirect = (source, destination) => {
         source.on('data', (data) => {
