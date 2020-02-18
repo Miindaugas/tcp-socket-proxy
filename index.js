@@ -35,4 +35,4 @@ net.createServer((local) => {
     redirect(local, remote);
     redirect(remote, local);
     remote.connect(remoteport, remotehost);
-}).listen(localport, '0.0.0.0');
+}).listen(localport);
