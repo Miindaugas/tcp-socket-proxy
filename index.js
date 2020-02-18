@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 const INDEX = '/index.html';
 
 const server = express()
-    .listen(PORT, () => console.log(`Listening on ${PORT}`));
+    .listen(80, () => console.log(`Listening on ${PORT}`));
 
 const io = socketIO(server);
 
