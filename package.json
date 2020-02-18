@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Miindaugas/tcp-socket-proxy#readme",
   "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
   },
   "engines": {
     "node": "12.6.0"
