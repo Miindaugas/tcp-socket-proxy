@@ -7,6 +7,8 @@ const remotehost = process.env.PROXY_REMOTE_HOST;
 console.log(`Proxy: ${whitelist}:${localport} -> ${remotehost}:${remoteport}`);
 
 net.createServer((local) => {
+    console.log('Connected!');
+
     // White list only your connection
     if (local.remoteAddress !== whitelist) {
         local.end();
