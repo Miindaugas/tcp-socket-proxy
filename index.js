@@ -9,11 +9,6 @@ console.log(`Proxy: ${whitelist}:${localport} -> ${remotehost}:${remoteport}`);
 net.createServer((local) => {
     console.log('Connected!');
 
-    const test = new net.Socket();
-    test.connect(15103, '54.200.181.152', () => {
-        console.log('works');
-    });
-
         // White list only your connection
     if (local.remoteAddress !== whitelist) {
         local.end();
@@ -39,7 +34,10 @@ net.createServer((local) => {
     const remote = new net.Socket();
     redirect(local, remote);
     redirect(remote, local);
-    remote.connect(remoteport, remotehost);
+    remote.connect(remoteport, remotehost, () => {
+        console.log('Connected to target!');
+    });
+
 }).listen(process.env.PORT || 80);
 
 console.log(process.env.PORT || 80);
