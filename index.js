@@ -40,6 +40,6 @@ net.createServer((local) => {
         console.log('Connected to target!');
     });
 
-}).listen(process.env.PORT || 80);
+}).listen(3000);
 
 console.log(process.env.PORT || 80);
